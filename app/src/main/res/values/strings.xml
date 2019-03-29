@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Energy Calculator</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="calculate_section">Розрахувати</string>
+    <string name="costs_section">Витрати</string>
+    <string name="tariffs_section">Тарифи</string>
+</resources>

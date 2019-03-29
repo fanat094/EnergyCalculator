@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/calculate_section"
+            android:enabled="true"
+            android:title="@string/calculate_section"
+            android:icon="@drawable/ic_lightbulb_outline"
+            app:showAsAction="ifRoom"/>
+    <item
+            android:id="@+id/costs_section"
+            android:enabled="true"
+            android:title="@string/costs_section"
+            android:icon="@drawable/ic_cash"
+            app:showAsAction="ifRoom"/>
+
+    <item
+            android:id="@+id/tariffs_section"
+            android:enabled="true"
+            android:title="@string/tariffs_section"
+            android:icon="@drawable/ic_power_plug"
+            app:showAsAction="ifRoom"/>
+</menu>

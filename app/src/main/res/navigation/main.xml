@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main"
+            app:startDestination="@+id/calculate_section">
+
+    <fragment android:id="@+id/calculate_section"
+              android:name="com.android.yamschikovdima.energycalculator.screens.calculate.CalculateFragment"
+              android:label="calculate_fragment"
+              tools:layout="@layout/calculate_fragment"/>
+
+    <fragment android:id="@+id/costs_section"
+              android:name="com.android.yamschikovdima.energycalculator.screens.costs.CostsFragment"
+              android:label="costs_fragment"
+              tools:layout="@layout/costs_fragment"/>
+
+    <fragment android:id="@+id/tariffs_section"
+              android:name="com.android.yamschikovdima.energycalculator.screens.tariffs.TariffsFragment"
+              android:label="tariffs_fragment"
+              tools:layout="@layout/tariffs_fragment"/>
+
+    <action
+            android:id="@+id/to_calculate_section"
+            app:destination="@id/calculate_section"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/main"
+            app:popUpToInclusive="true"/>
+
+    <action
+            android:id="@+id/to_costs_section"
+            app:destination="@id/costs_section"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/main"
+            app:popUpToInclusive="true"/>
+
+    <action
+            android:id="@+id/to_tariffs_section"
+            app:destination="@id/tariffs_section"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/main"
+            app:popUpToInclusive="true"/>
+
+</navigation>
