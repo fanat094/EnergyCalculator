@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "name": "ТОВ Хмельницькобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "ТОВ Хмельницьк2",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "ТОВ Хмельницьк3",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "ТОВ Хмельницьк4",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "ТОВ Хмельницьк5",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "ТОВ Хмельницькобленерго6",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "ТОВ Хмельницьк7",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "ТОВ Хмельницьк8",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "ТОВ Хмельницьк9",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "ТОВ Хмельницьк10",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ]
+  }
+]

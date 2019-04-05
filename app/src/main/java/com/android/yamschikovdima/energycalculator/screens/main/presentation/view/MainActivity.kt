@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.android.yamschikovdima.energycalculator.R
@@ -18,7 +19,7 @@ import com.android.yamschikovdima.energycalculator.screens.main.router.MainRoute
 import kotlinx.android.synthetic.main.main_activity.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), ComponentHolder<MainComponent> {
+class MainActivity : AppCompatActivity(), ComponentHolder<MainComponent>, LifecycleOwner {
 
     @Inject
     lateinit var viewModel: MainViewModel
@@ -45,9 +46,13 @@ class MainActivity : AppCompatActivity(), ComponentHolder<MainComponent> {
         navigation = Navigation.findNavController(this, R.id.main_host_fragment)
 
         binding.apply {
-            setLifecycleOwner(this@MainActivity)
+            //setLifecycleOwner(this@MainActivity)
 
             //this.lifecycleOwner(this@MainActivity)
+
+            lifecycleOwner.let {
+                this@MainActivity
+            }
             vm = viewModel
         }
 

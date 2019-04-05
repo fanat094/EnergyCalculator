@@ -9,4 +9,11 @@
     <string name="calculate_section">Розрахувати</string>
     <string name="costs_section">Витрати</string>
     <string name="tariffs_section">Тарифи</string>
+    <string name="title_select_energy_state">Оберіть Обленерго</string>
+    <string name="auto_select_energy_state">Обрати автоматично</string>
+    <string name="title_activity_flat">FlatActivity</string>
+    <string name="title_select_energy_state_ok">OK</string>
+    <string name="title_select_energy_state_cancel">Cancel</string>
+    <string name="title_select_energy_state_message">ТОВ Хмельницькобленерго</string>
+    <string name="title_select_energy_state_cancel_selected">Визначено</string>
 </resources>
