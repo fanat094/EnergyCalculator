@@ -1,5 +1,6 @@
 package com.android.yamschikovdima.energycalculator.base.binding
 
+import android.view.View
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
@@ -27,4 +28,9 @@ fun setItems(view: androidx.recyclerview.widget.RecyclerView,
              items: List<Any>?,
              viewTypes: BaseViewTypes) {
     setItems(view, items, viewTypes, null, null)
+}
+
+@BindingAdapter("visibility")
+fun View.setVisibility(value: Boolean?) {
+    visibility = if (value != false) View.VISIBLE else View.GONE
 }

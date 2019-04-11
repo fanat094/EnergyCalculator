@@ -3,7 +3,8 @@ package com.android.yamschikovdima.energycalculator.selectenergystate.data.model
 data class EnergyState(
     val id: Int,
     val name: String,
-    val calculator: List<Calculator>
+    val calculator: List<Calculator>,
+    val region:String
 )
 
 data class Calculator(

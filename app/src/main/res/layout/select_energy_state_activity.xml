@@ -15,46 +15,66 @@
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/appbar">
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-                android:layout_height="wrap_content"
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
-                android:theme="@style/AppTheme.AppBarOverlay">
+                android:layout_height="match_parent"
+                android:id="@+id/appbar">
 
-            <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
+            <com.google.android.material.appbar.AppBarLayout
+                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
-                    app:title="@string/title_select_energy_state"
-                    app:popupTheme="@style/AppTheme.PopupOverlay"/>
+                    android:theme="@style/AppTheme.AppBarOverlay">
 
-        </com.google.android.material.appbar.AppBarLayout>
+                <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/colorPrimary"
+                        app:title="@string/title_select_energy_state"
+                        app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
-            <androidx.recyclerview.widget.RecyclerView
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:id="@+id/vitamins_history_list"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    items="@{vm.items}"
-                    viewTypes="@{SelectEnergyStateItemViewTypes.instance}"
-                    tools:layout_editor_absoluteY="179dp" app:layout_constraintHorizontal_bias="1.0"/>
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    tools:showIn="@layout/select_energy_state_activity"
+                    tools:context=".selectenergystate.presentation.view.SelectEnergyStateActivity">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabSearchEnergyState"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="@dimen/fab_margin"
-                app:srcCompat="@drawable/ic_search_white_24dp"
-                android:onClick="@{()->vm.fabSearchEnergyStateEvent()}"/>
+                <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/vitamins_history_list"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        items="@{vm.items}"
+                        viewTypes="@{SelectEnergyStateItemViewTypes.instance}"
+                        tools:layout_editor_absoluteY="179dp"
+                        app:layout_constraintHorizontal_bias="1.0"/>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabSearchEnergyState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/fab_margin"
+                    app:srcCompat="@drawable/ic_search_white_24dp"
+                    android:onClick="@{()->vm.fabSearchEnergyStateEvent()}"/>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <include
+                isVisible="@{vm.isProgress}"
+                layout="@layout/progress"
+        />
+
+    </FrameLayout>
 </layout>

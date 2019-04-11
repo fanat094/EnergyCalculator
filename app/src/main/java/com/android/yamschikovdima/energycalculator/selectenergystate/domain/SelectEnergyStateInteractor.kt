@@ -5,4 +5,6 @@ class SelectEnergyStateInteractor(
 ) {
 
     fun getSelectEnergyState() = repository.getSelectEnergyState()
+
+    fun getFusedEnergyState(fusedRegion:String) = repository.getFusedEnergyState(fusedRegion)
 }

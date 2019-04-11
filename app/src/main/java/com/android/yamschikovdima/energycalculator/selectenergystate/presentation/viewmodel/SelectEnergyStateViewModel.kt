@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Geocoder
+import android.util.Log
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
@@ -27,6 +28,9 @@ class SelectEnergyStateViewModel(
 
 ) : BaseViewModel() {
 
+    val isProgress = MutableLiveData<Boolean>()
+    val fusedRegionEnergyStateData = MutableLiveData<String>()
+    val fusedRegionEnergyStateDone = MutableLiveData<String>()
 
     private fun createItem(energyState: EnergyState) = SelectEnergyStateItemViewModel(energyState).apply {
 
@@ -43,6 +47,7 @@ class SelectEnergyStateViewModel(
 
     fun fabSearchEnergyStateEvent() {
 
+        isProgress.postValue(true)
         fabSearchEnergyState.postValue(Unit)
     }
 
@@ -54,10 +59,23 @@ class SelectEnergyStateViewModel(
 //        KLog.e("energyStateList22", "------->" + (items.value))
 //    }
 
+    fun setFusedRegionEnergyState(fusedRegionEnergyState: String?) {
+        fusedRegionEnergyStateData.value = fusedRegionEnergyState
+        Log.e("cityProfileActual", fusedRegionEnergyStateData.value.toString())
+
+        Log.e("regionFused",
+            selectEnergyStateInteractor.getFusedEnergyState(fusedRegionEnergyStateData.value.toString()))
+
+        fusedRegionEnergyStateDone.postValue(selectEnergyStateInteractor
+            .getFusedEnergyState(fusedRegionEnergyStateData.value.toString()))
+
+        //isProgress.value = false
+
+    }
+
     init {
 
         //items.postValue(energyStateList.map { createItem(it) })
-
         items.value = selectEnergyStateInteractor.getSelectEnergyState().map { createItem(it) }
         //selectEnergyStateInteractor.getSelectEnergyState()
     }

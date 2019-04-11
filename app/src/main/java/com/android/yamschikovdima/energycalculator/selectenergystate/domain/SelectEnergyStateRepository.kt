@@ -5,4 +5,6 @@ import io.reactivex.Single
 interface SelectEnergyStateRepository {
 
     fun getSelectEnergyState(): List<EnergyState>
+
+    fun getFusedEnergyState(fusedRegion:String): String
 }

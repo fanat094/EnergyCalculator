@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "ТОВ Хмельницькобленерго",
+    "name": "ПАТ Волиньобленерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -24,11 +24,12 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Волинська область"
   },
   {
     "id": 2,
-    "name": "ТОВ Хмельницьк2",
+    "name": "ПАТ Вінницяобленерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -51,11 +52,12 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Вінницька область"
   },
   {
     "id": 3,
-    "name": "ТОВ Хмельницьк3",
+    "name": "ПАТ ДТЕК Дніпрообленерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -78,11 +80,12 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Дніпропетровська область"
   },
   {
     "id": 4,
-    "name": "ТОВ Хмельницьк4",
+    "name": "ПАТ ДТЕК Донецькобленерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -105,11 +108,12 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Донецька область"
   },
   {
     "id": 5,
-    "name": "ТОВ Хмельницьк5",
+    "name": "ПАТ Житомиробленерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -132,11 +136,12 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Житомирська область"
   },
   {
     "id": 6,
-    "name": "ТОВ Хмельницькобленерго6",
+    "name": "ПАТ Закарпаттяобленерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -159,11 +164,12 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Закарпатська область"
   },
   {
     "id": 7,
-    "name": "ТОВ Хмельницьк7",
+    "name": "ПАТ Запоріжжяобленерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -186,11 +192,12 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Запорізька область"
   },
   {
     "id": 8,
-    "name": "ТОВ Хмельницьк8",
+    "name": "ПАТ Київенерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -213,11 +220,12 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Київська область"
   },
   {
     "id": 9,
-    "name": "ТОВ Хмельницьк9",
+    "name": "ПАТ Київобленерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -240,11 +248,12 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Київська область"
   },
   {
     "id": 10,
-    "name": "ТОВ Хмельницьк10",
+    "name": "ПАТ Кіровоградобленерго",
     "calculator": [
       {
         "id_calculator": 0,
@@ -267,6 +276,427 @@
         "night_max": "0.900",
         "peak_max": "0.9"
       }
-    ]
+    ],
+    "region": "Кіровоградська область"
+  },
+  {
+    "id": 11,
+    "name": "ТОВ Луганське енергетичне об'єднання",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Луганська область"
+  },
+  {
+    "id": 12,
+    "name": "ПАТ Львівобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Львівська область"
+  },
+  {
+    "id": 13,
+    "name": "ПАТ Миколаївобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Миколаївська область"
+  },
+  {
+    "id": 14,
+    "name": "ПАТ Одесаобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Одеська область"
+  },
+  {
+    "id": 15,
+    "name": "ПАТ Полтаваобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Полтавська область"
+  },
+  {
+    "id": 16,
+    "name": "ПАТ Прикарпаттяобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Івано-Франківська область"
+  },
+  {
+    "id": 17,
+    "name": "ПАТ Рівнеобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Рівненська область"
+  },
+  {
+    "id": 18,
+    "name": "ПАТ Сумиобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Сумська область"
+  },
+  {
+    "id": 19,
+    "name": "ПАТ Тернопільобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Тернопільська область"
+  },
+  {
+    "id": 20,
+    "name": "ПАТ Харківобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Харківська область"
+  },
+  {
+    "id": 21,
+    "name": "ПАТ Херсонобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Херсонська область"
+  },
+  {
+    "id": 22,
+    "name": "ПАТ Хмельницькобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Хмельницька область"
+  },
+  {
+    "id": 23,
+    "name": "ПАТ Черкасиобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Черкаська область"
+  },
+  {
+    "id": 24,
+    "name": "ПАТ Чернівціобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Чернівецька область"
+  },
+  {
+    "id": 25,
+    "name": "ПАТ Чернігівобленерго",
+    "calculator": [
+      {
+        "id_calculator": 0,
+        "era_mini": "0.900",
+        "era_max": "0.900"
+      },
+      {
+        "id_calculator": 1,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "day_max": "0.900",
+        "night_max": "0.900"
+      },
+      {
+        "id_calculator": 2,
+        "day_mini": "0.900",
+        "night_mini": "0.900",
+        "peak_mini": "0.09",
+        "day_max": "0.900",
+        "night_max": "0.900",
+        "peak_max": "0.9"
+      }
+    ],
+    "region": "Чернігівська область"
   }
 ]

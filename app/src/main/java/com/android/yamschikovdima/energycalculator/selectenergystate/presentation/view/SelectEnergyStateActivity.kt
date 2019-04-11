@@ -28,6 +28,7 @@ import androidx.navigation.NavController
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
 import com.android.yamschikovdima.energycalculator.R
+import com.android.yamschikovdima.energycalculator.base.binding.setVisibility
 import com.android.yamschikovdima.energycalculator.base.di.appComponent
 import com.android.yamschikovdima.energycalculator.databinding.SelectEnergyStateActivityBinding
 import com.android.yamschikovdima.energycalculator.screens.main.presentation.view.MainActivity
@@ -46,6 +47,7 @@ import com.google.gson.GsonBuilder
 import com.socks.library.klog.JsonLog
 import com.google.gson.reflect.TypeToken
 import io.reactivex.Single
+import kotlinx.android.synthetic.main.progress.*
 
 
 class SelectEnergyStateActivity : AppCompatActivity() {
@@ -87,6 +89,7 @@ class SelectEnergyStateActivity : AppCompatActivity() {
                 if (checkNetConnection()) {
 
                 if (hasPermissions()) {
+                    isProgressBar.setVisibility(true)
                     getLocationFused()
 
                 } else {
@@ -97,6 +100,23 @@ class SelectEnergyStateActivity : AppCompatActivity() {
 
                     tryAgainCheckNetConnection()
                 }
+            })
+
+            //fused VModel
+            viewModel.fusedRegionEnergyStateDone.observe(lifecycleOwner.let {
+                this@SelectEnergyStateActivity
+            }, Observer {
+
+                KLog.e("fusedFromVM", it)
+
+                if(it.isNotEmpty()) {
+
+                    fabSearchEnergyStateDialog(it)
+                }
+                else{fabSearchEnergyStateDialogEmpty()}
+
+                isProgressBar.setVisibility(false)
+
             })
         }
 
@@ -206,7 +226,7 @@ class SelectEnergyStateActivity : AppCompatActivity() {
     // --- Location Logic ---
     private fun getLocationFused() {
 
-        KLog.e("fusedTag", "empty")
+        KLog.e("fusedTag", "fused_init")
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
             == PackageManager.PERMISSION_GRANTED
@@ -225,7 +245,8 @@ class SelectEnergyStateActivity : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
 
-                        fabSearchEnergyStateDialog(address[0].adminArea)
+                        //fabSearchEnergyStateDialog(address[0].adminArea)
+                        viewModel.setFusedRegionEnergyState(address[0].adminArea)
                     }
                 }
 
@@ -265,6 +286,20 @@ class SelectEnergyStateActivity : AppCompatActivity() {
                     KLog.e("Tagg","On positive")
                     toMainActivity()
                 }
+                negativeButton(R.string.title_select_energy_state_cancel)
+                debugMode(debugMode)
+            }
+        }
+    }
+
+    // --- Dialog Utils ---
+    private fun fabSearchEnergyStateDialogEmpty() {
+
+        this.let {
+            MaterialDialog(it).show {
+                title(R.string.title_select_energy_state_cancel_selected_empty)
+                message(R.string.title_select_energy_state_message_empty)
+                positiveButton(R.string.title_select_energy_state_ok)
                 negativeButton(R.string.title_select_energy_state_cancel)
                 debugMode(debugMode)
             }
