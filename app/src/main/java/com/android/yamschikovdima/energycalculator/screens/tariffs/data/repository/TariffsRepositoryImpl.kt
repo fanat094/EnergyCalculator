@@ -1,6 +1,7 @@
-package com.android.yamschikovdima.energycalculator.selectenergystate.data.repository
+package com.android.yamschikovdima.energycalculator.screens.tariffs.data.repository
 
 import android.content.Context
+import com.android.yamschikovdima.energycalculator.screens.tariffs.domain.TariffsRepository
 import com.android.yamschikovdima.energycalculator.selectenergystate.data.model.EnergyState
 import com.android.yamschikovdima.energycalculator.selectenergystate.domain.SelectEnergyStateRepository
 import com.google.gson.Gson
@@ -8,17 +9,11 @@ import com.google.gson.reflect.TypeToken
 import com.socks.library.KLog
 import io.reactivex.Single
 
-class SelectEnergyStateRepositoryImpl(
+class TariffsRepositoryImpl(
 
     private val context: Context
 
-) : SelectEnergyStateRepository {
-    override fun getFusedEnergyState(fusedRegion: String): String {
-        KLog.e("filterMap_fusedRegion", fusedRegion)
-
-        return getSearchFusedEnergyState(fusedRegion)
-    }
-
+) : TariffsRepository {
     override fun getSelectEnergyState(): List<EnergyState> {
         return getEnergyStateList()
     }
@@ -34,17 +29,5 @@ class SelectEnergyStateRepositoryImpl(
         val energyStateList = gson.fromJson<List<EnergyState>>(json_string, listType)
 
         return energyStateList
-    }
-
-    private fun getSearchFusedEnergyState(fusedRegion: String): String {
-
-        val energyStateList = getEnergyStateList()
-        for (i in 0 until energyStateList.size - 1) {
-            val resRegion = energyStateList[i].region.contains(fusedRegion)
-            if (resRegion) {
-                return energyStateList[i].name
-            }
-        }
-        return ""
     }
 }

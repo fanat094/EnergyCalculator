@@ -11,6 +11,7 @@ class BaseViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView
     private val binding = DataBindingUtil.getBinding<ViewDataBinding>(itemView)
 
     fun bind(viewModel: Any) {
+
         binding?.setVariable(BR.vm, viewModel)
         binding?.executePendingBindings()
     }

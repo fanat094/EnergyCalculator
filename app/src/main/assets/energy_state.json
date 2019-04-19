@@ -593,24 +593,24 @@
     "calculator": [
       {
         "id_calculator": 0,
-        "era_mini": "0.900",
-        "era_max": "0.900"
+        "era_mini": "0.90",
+        "era_max": "1.68"
       },
       {
         "id_calculator": 1,
-        "day_mini": "0.900",
-        "night_mini": "0.900",
-        "day_max": "0.900",
-        "night_max": "0.900"
+        "day_mini": "0.90",
+        "night_mini": "0.45",
+        "day_max": "1.68",
+        "night_max": "0.84"
       },
       {
         "id_calculator": 2,
-        "day_mini": "0.900",
-        "night_mini": "0.900",
-        "peak_mini": "0.09",
-        "day_max": "0.900",
-        "night_max": "0.900",
-        "peak_max": "0.9"
+        "day_mini": "0.90",
+        "night_mini": "0.36",
+        "peak_mini": "1.35",
+        "day_max": "1.68",
+        "night_max": "0.6720",
+        "peak_max": "2.52"
       }
     ],
     "region": "Хмельницька область"

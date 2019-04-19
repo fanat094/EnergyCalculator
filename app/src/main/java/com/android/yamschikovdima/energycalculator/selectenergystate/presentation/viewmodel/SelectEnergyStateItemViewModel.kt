@@ -14,6 +14,10 @@ class SelectEnergyStateItemViewModel(private val energyState: EnergyState) : Bas
         KLog.e("energyStateList33", value)
     }
 
+    val region = MutableLiveData<String>().apply {
+        value = energyState.region
+    }
+
     val click = SingleLiveEvent<Unit>()
 
     fun click() {

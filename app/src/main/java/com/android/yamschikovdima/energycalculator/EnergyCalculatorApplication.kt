@@ -7,14 +7,16 @@ import com.android.yamschikovdima.energycalculator.base.di.ComponentHolder
 import com.android.yamschikovdima.energycalculator.dagger.AppComponent
 import com.android.yamschikovdima.energycalculator.dagger.AppModule
 import com.android.yamschikovdima.energycalculator.dagger.DaggerAppComponent
+import com.android.yamschikovdima.energycalculator.dagger.StorageModule
 
 
 class EnergyCalculatorApplication : Application(), ComponentHolder<AppComponent> {
 
     override val component: AppComponent by lazy {
         DaggerAppComponent.builder()
-                .appModule(AppModule(this))
-                .build()
+            .appModule(AppModule(this))
+            .storageModule(StorageModule(this))
+            .build()
     }
 
     companion object {

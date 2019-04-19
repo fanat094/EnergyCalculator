@@ -16,7 +16,7 @@
               tools:layout="@layout/costs_fragment"/>
 
     <fragment android:id="@+id/tariffs_section"
-              android:name="com.android.yamschikovdima.energycalculator.screens.tariffs.TariffsFragment"
+              android:name="com.android.yamschikovdima.energycalculator.screens.tariffs.presentation.view.TariffsFragment"
               android:label="tariffs_fragment"
               tools:layout="@layout/tariffs_fragment"/>
 

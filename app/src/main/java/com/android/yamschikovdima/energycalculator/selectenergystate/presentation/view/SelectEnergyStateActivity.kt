@@ -11,6 +11,8 @@ import android.net.NetworkInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.provider.ContactsContract
 import android.provider.Settings
 import android.util.Log
@@ -20,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
@@ -29,6 +32,8 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
 import com.android.yamschikovdima.energycalculator.R
 import com.android.yamschikovdima.energycalculator.base.binding.setVisibility
+import com.android.yamschikovdima.energycalculator.base.data.ISharedPreferenceManager
+import com.android.yamschikovdima.energycalculator.base.data.SharedPreferencesManager
 import com.android.yamschikovdima.energycalculator.base.di.appComponent
 import com.android.yamschikovdima.energycalculator.databinding.SelectEnergyStateActivityBinding
 import com.android.yamschikovdima.energycalculator.screens.main.presentation.view.MainActivity
@@ -59,6 +64,9 @@ class SelectEnergyStateActivity : AppCompatActivity() {
     lateinit var router: SelectEnergyStateRouter
 
     private var debugMode = false
+
+    @Inject
+    lateinit var preferences: ISharedPreferenceManager
 
     val component by lazy {
         DaggerSelectEnergyStateComponent.builder()
@@ -112,6 +120,7 @@ class SelectEnergyStateActivity : AppCompatActivity() {
                 if(it.isNotEmpty()) {
 
                     fabSearchEnergyStateDialog(it)
+                    vibrator()
                 }
                 else{fabSearchEnergyStateDialogEmpty()}
 
@@ -119,6 +128,13 @@ class SelectEnergyStateActivity : AppCompatActivity() {
 
             })
         }
+
+        viewModel.itemClick.observe(lifecycle.let {
+            this@SelectEnergyStateActivity
+        }, Observer {
+            preferences.setIdSelectedEnergyState(it.name)
+            toMainActivity()
+        })
 
         router.bindViewModel(viewModel)
     }
@@ -129,7 +145,8 @@ class SelectEnergyStateActivity : AppCompatActivity() {
         val permissions = arrayOf(
             Manifest.permission.INTERNET,
             Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.VIBRATE
         )
 
         for (perms in permissions) {
@@ -147,7 +164,8 @@ class SelectEnergyStateActivity : AppCompatActivity() {
         val permissions = arrayOf(
             Manifest.permission.INTERNET,
             Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.VIBRATE
         )
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(permissions, PERMISSIONS_REQUEST_CODE)
@@ -158,6 +176,7 @@ class SelectEnergyStateActivity : AppCompatActivity() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)
             || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.INTERNET)
             || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    ||ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.VIBRATE)
         ) {
             val message = "Storage permission is needed to show files count"
             Snackbar.make(this.findViewById(R.id.appbar), message, Snackbar.LENGTH_LONG)
@@ -306,6 +325,19 @@ class SelectEnergyStateActivity : AppCompatActivity() {
         }
     }
 
+    private fun vibrator(){
+        val vibratorService: Vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibratorService.vibrate(VibrationEffect.createOneShot(150, VibrationEffect.DEFAULT_AMPLITUDE))
+        }
+        else{
+            @Suppress("DEPRECATION")
+            vibratorService.vibrate(150)
+        }
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == PERMISSIONS_REQUEST_CODE) {
             getLocationFused()
@@ -316,6 +348,9 @@ class SelectEnergyStateActivity : AppCompatActivity() {
     private fun toMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+
+//        preferences.getCookies()
+
         finish()
     }
 
