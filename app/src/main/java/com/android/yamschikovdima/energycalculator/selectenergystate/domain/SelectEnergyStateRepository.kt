@@ -7,4 +7,6 @@ interface SelectEnergyStateRepository {
     fun getSelectEnergyState(): List<EnergyState>
 
     fun getFusedEnergyState(fusedRegion:String): String
+
+    fun getFusedEnergyState2(fusedRegion:String): EnergyState
 }

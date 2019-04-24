@@ -31,6 +31,7 @@ class SelectEnergyStateViewModel(
     val isProgress = MutableLiveData<Boolean>()
     val fusedRegionEnergyStateData = MutableLiveData<String>()
     val fusedRegionEnergyStateDone = MutableLiveData<String>()
+    val fusedRegionEnergyStateObj = MutableLiveData<EnergyState>()
 
     private fun createItem(energyState: EnergyState) = SelectEnergyStateItemViewModel(energyState).apply {
 
@@ -59,18 +60,31 @@ class SelectEnergyStateViewModel(
 //        KLog.e("energyStateList22", "------->" + (items.value))
 //    }
 
-    fun setFusedRegionEnergyState(fusedRegionEnergyState: String?) {
+//    fun setFusedRegionEnergyState(fusedRegionEnergyState: String?) {
+////        fusedRegionEnergyStateData.value = fusedRegionEnergyState
+////        Log.e("cityProfileActual", fusedRegionEnergyStateData.value.toString())
+//
+//        Log.e("regionFused",
+//            selectEnergyStateInteractor.getFusedEnergyState(fusedRegionEnergyStateData.value.toString()))
+//
+//        fusedRegionEnergyStateDone.postValue(selectEnergyStateInteractor
+//            .getFusedEnergyState(fusedRegionEnergyStateData.value.toString()))
+//
+//        //isProgress.value = false
+//
+//    }
+
+    fun setFusedRegionEnergyState2(fusedRegionEnergyState: String) {
+
         fusedRegionEnergyStateData.value = fusedRegionEnergyState
-        Log.e("cityProfileActual", fusedRegionEnergyStateData.value.toString())
 
-        Log.e("regionFused",
-            selectEnergyStateInteractor.getFusedEnergyState(fusedRegionEnergyStateData.value.toString()))
+        Log.e("setFRegionEnergyState2",
+            selectEnergyStateInteractor.getFusedEnergyState2(fusedRegionEnergyState).name)
 
-        fusedRegionEnergyStateDone.postValue(selectEnergyStateInteractor
-            .getFusedEnergyState(fusedRegionEnergyStateData.value.toString()))
+        fusedRegionEnergyStateObj.postValue(selectEnergyStateInteractor.getFusedEnergyState2(
 
-        //isProgress.value = false
-
+            fusedRegionEnergyStateData.value.toString()
+        ))
     }
 
     init {

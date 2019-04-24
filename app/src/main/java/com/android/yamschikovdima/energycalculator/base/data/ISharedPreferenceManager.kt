@@ -2,10 +2,8 @@ package com.android.yamschikovdima.energycalculator.base.data
 
 interface ISharedPreferenceManager {
 
-    fun getCookies(): MutableSet<String>
+    fun setIdSelectedEnergyState(idselectedenergystate: Int)
 
-    fun setCookies(cookies: MutableSet<String>)
-
-    fun setIdSelectedEnergyState(idselectedenergystate: String)
+    fun getIdSelectedEnergyState():Int
 
 }

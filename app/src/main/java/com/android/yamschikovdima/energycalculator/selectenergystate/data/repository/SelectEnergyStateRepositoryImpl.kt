@@ -13,6 +13,10 @@ class SelectEnergyStateRepositoryImpl(
     private val context: Context
 
 ) : SelectEnergyStateRepository {
+    override fun getFusedEnergyState2(fusedRegion: String): EnergyState {
+        return getSearchFusedEnergyState2(fusedRegion)
+    }
+
     override fun getFusedEnergyState(fusedRegion: String): String {
         KLog.e("filterMap_fusedRegion", fusedRegion)
 
@@ -46,5 +50,17 @@ class SelectEnergyStateRepositoryImpl(
             }
         }
         return ""
+    }
+
+    private fun getSearchFusedEnergyState2(fusedRegion: String): EnergyState {
+
+        val energyStateList = getEnergyStateList()
+        for (i in 0 until energyStateList.size - 1) {
+            val resRegion = energyStateList[i].region.contains(fusedRegion)
+            if (resRegion) {
+                return energyStateList[i]
+            }
+        }
+        return energyStateList[0]
     }
 }

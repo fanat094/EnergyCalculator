@@ -23,15 +23,20 @@
                 android:orientation="horizontal">
 
             <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
+                    android:id="@+id/toolbar_tariffs"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/colorPrimary"
-                    app:title="Хмельницькобленерго"
+                    app:title="@{vm.toolbarTariffsTitle}"
                     app:titleTextColor="@color/colorWhite"
                     app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
 
         <androidx.appcompat.widget.LinearLayoutCompat
                 android:orientation="horizontal"
@@ -119,11 +124,11 @@
                                         android:id="@+id/normalTariffDayValueTv"
                                         android:textSize="18sp"
                                         android:text="@{vm.normalTariffDayValue}"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        android:layout_marginEnd="16dp"
                                         android:layout_marginTop="24dp"
                                         app:layout_constraintTop_toBottomOf="@+id/normalTariffDividerVv"
-                                        tools:text="0,90 грн"/>
+                                        tools:text="0,90 грн"
+                                        android:layout_marginEnd="8dp"
+                                        app:layout_constraintEnd_toStartOf="@+id/normalTariffDayMaxValueTv"/>
 
                                 <TextView
                                         android:text="Ніч"
@@ -137,15 +142,36 @@
                                         app:layout_constraintTop_toBottomOf="@+id/normalTariffDayTv"/>
 
                                 <TextView
-                                        android:text="1,68 грн"
+                                        tools:text="0,90 грн"
+                                        android:text="@{vm.normalTariffNightValue}"
                                         android:textSize="18sp"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/normalTariffNightValueTv"
+                                        android:layout_marginTop="16dp"
+                                        app:layout_constraintTop_toBottomOf="@+id/normalTariffDayValueTv"
+                                        app:layout_constraintEnd_toStartOf="@+id/normalTariffNightMaxValueTv"
+                                        android:layout_marginEnd="8dp"/>
+                                <TextView
+                                        android:text="@{vm.normalTariffDayMaxValue}"
+                                        android:textSize="18sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/normalTariffDayMaxValueTv"
+                                        app:layout_constraintTop_toBottomOf="@+id/normalTariffDividerVv"
+                                        android:layout_marginTop="24dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        android:layout_marginEnd="16dp"/>
+                                <TextView
+                                        android:text="@{vm.normalTariffNightMaxValue}"
+                                        android:textSize="18sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/normalTariffNightMaxValueTv"
                                         android:layout_marginEnd="16dp"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         android:layout_marginTop="16dp"
-                                        app:layout_constraintTop_toBottomOf="@+id/normalTariffDayValueTv"/>
+                                        app:layout_constraintTop_toBottomOf="@+id/normalTariffDayMaxValueTv"/>
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.cardview.widget.CardView>
@@ -220,15 +246,16 @@
                                         android:layout_marginTop="24dp"/>
 
                                 <TextView
+                                        tools:text="2221"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/twoZoneTariffDayValueTv"
                                         android:textSize="18sp"
-                                        android:text="0,90 грн"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        android:layout_marginEnd="16dp"
+                                        android:text="@{vm.twoZoneTariffDayValue}"
                                         android:layout_marginTop="24dp"
-                                        app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDividerVv"/>
+                                        app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDividerVv"
+                                        app:layout_constraintEnd_toStartOf="@+id/twoZoneTariffDayMaxValueTv"
+                                        android:layout_marginEnd="8dp"/>
                                 <TextView
                                         android:text="Ніч"
                                         android:textSize="18sp"
@@ -240,13 +267,37 @@
                                         android:layout_marginTop="16dp"
                                         app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDayValueTv"/>
                                 <TextView
-                                        android:text="1,68 грн"
+                                        tools:text="2222"
+                                        android:text="@{vm.twoZoneTariffNightValue}"
                                         android:textSize="18sp"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/twoZoneTariffNightValueTv"
-                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginTop="16dp"
+                                        app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDayValueTv"
+                                        app:layout_constraintEnd_toStartOf="@+id/twoZoneTariffNightMaxValueTv"
+                                        android:layout_marginEnd="8dp"/>
+
+                                <TextView
+                                        tools:text="0,45"
+                                        android:text="@{vm.twoZoneTariffDayMaxValue}"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/twoZoneTariffDayMaxValueTv"
+                                        android:textSize="18sp"
+                                        app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDividerVv"
                                         app:layout_constraintEnd_toEndOf="parent"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginTop="24dp"
+                                />
+                                <TextView
+                                        android:text="@{vm.twoZoneTariffNightMaxValue}"
+                                        android:textSize="18sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/twoZoneTariffNightMaxValueTv"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        android:layout_marginEnd="16dp"
                                         android:layout_marginTop="16dp"
                                         app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDayValueTv"/>
 
@@ -322,15 +373,16 @@
                                         android:layout_marginTop="24dp"/>
 
                                 <TextView
+                                        tools:text="3331"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/threeZoneTariffDayValueTv"
                                         android:textSize="18sp"
-                                        android:text="0,90 грн"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        android:layout_marginEnd="16dp"
+                                        android:text="@{vm.threeZoneTariffDayValue}"
                                         android:layout_marginTop="24dp"
-                                        app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDividerVv"/>
+                                        app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDividerVv"
+                                        app:layout_constraintEnd_toStartOf="@+id/threeZoneTariffDayMaxTv"
+                                        android:layout_marginEnd="8dp"/>
                                 <TextView
                                         android:text="Ніч"
                                         android:textSize="18sp"
@@ -343,15 +395,16 @@
                                         app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDayTv"/>
 
                                 <TextView
-                                        android:text="1,68 грн"
+                                        tools:text="3332"
+                                        android:text="@{vm.threeZoneTariffNightValue}"
                                         android:textSize="18sp"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/threeZoneTariffNightValueTv"
-                                        android:layout_marginEnd="16dp"
-                                        app:layout_constraintEnd_toEndOf="parent"
                                         android:layout_marginTop="16dp"
-                                        app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDayValueTv"/>
+                                        app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDayValueTv"
+                                        app:layout_constraintEnd_toStartOf="@+id/threeZoneTariffNightMaxTv"
+                                        android:layout_marginEnd="8dp"/>
 
                                 <TextView
                                         android:text="Пік"
@@ -365,15 +418,46 @@
                                         app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffNightTv"/>
 
                                 <TextView
-                                        android:text="1,68 грн"
+                                        tools:text="3333"
+                                        android:text="@{vm.threeZoneTariffPeakValue}"
                                         android:textSize="18sp"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/threeZoneTariffPeakValueTv"
+                                        android:layout_marginTop="16dp"
+                                        app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffNightValueTv"
+                                        app:layout_constraintEnd_toStartOf="@+id/threeZoneTariffPeakMaxTv"
+                                        android:layout_marginEnd="8dp"/>
+                                <TextView
+                                        android:text="@{vm.threeZoneTariffDayMaxValue}"
+                                        android:textSize="18sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/threeZoneTariffDayMaxTv"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginTop="24dp"
+                                        app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDividerVv"/>
+                                <TextView
+                                        android:textSize="18sp"
+                                        android:text="@{vm.threeZoneTariffNightMaxValue}"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/threeZoneTariffNightMaxTv"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginTop="16dp"
+                                        app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDayMaxTv"/>
+                                <TextView
+                                        android:textSize="18sp"
+                                        android:text="@{vm.threeZoneTariffPeakMaxValue}"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/threeZoneTariffPeakMaxTv"
                                         android:layout_marginEnd="16dp"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         android:layout_marginTop="16dp"
-                                        app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffNightValueTv"/>
+                                        app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffNightMaxTv"/>
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.cardview.widget.CardView>
@@ -385,6 +469,13 @@
             </ScrollView>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <include
+                    isVisible="@{vm.isProgress}"
+                    layout="@layout/progress"
+            />
+
+        </FrameLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

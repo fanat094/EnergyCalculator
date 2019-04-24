@@ -111,13 +111,31 @@ class SelectEnergyStateActivity : AppCompatActivity() {
             })
 
             //fused VModel
-            viewModel.fusedRegionEnergyStateDone.observe(lifecycleOwner.let {
+//            viewModel.fusedRegionEnergyStateDone.observe(lifecycleOwner.let {
+//                this@SelectEnergyStateActivity
+//            }, Observer {
+//
+//                KLog.e("fusedFromVM", it)
+//
+//                if(it.isNotEmpty()) {
+//
+//                    fabSearchEnergyStateDialog(it)
+//                    vibrator()
+//                }
+//                else{fabSearchEnergyStateDialogEmpty()}
+//
+//                isProgressBar.setVisibility(false)
+//
+//            })
+
+            /////
+            viewModel.fusedRegionEnergyStateObj.observe(lifecycleOwner.let {
                 this@SelectEnergyStateActivity
             }, Observer {
 
                 KLog.e("fusedFromVM", it)
 
-                if(it.isNotEmpty()) {
+                if(it!=null) {
 
                     fabSearchEnergyStateDialog(it)
                     vibrator()
@@ -132,8 +150,7 @@ class SelectEnergyStateActivity : AppCompatActivity() {
         viewModel.itemClick.observe(lifecycle.let {
             this@SelectEnergyStateActivity
         }, Observer {
-            preferences.setIdSelectedEnergyState(it.name)
-            toMainActivity()
+            toMainActivity(it.id)
         })
 
         router.bindViewModel(viewModel)
@@ -265,7 +282,8 @@ class SelectEnergyStateActivity : AppCompatActivity() {
                         ).show()
 
                         //fabSearchEnergyStateDialog(address[0].adminArea)
-                        viewModel.setFusedRegionEnergyState(address[0].adminArea)
+                        //viewModel.setFusedRegionEnergyState(address[0].adminArea)
+                        viewModel.setFusedRegionEnergyState2(address[0].adminArea)
                     }
                 }
 
@@ -295,15 +313,15 @@ class SelectEnergyStateActivity : AppCompatActivity() {
     }
 
     // --- Dialog Utils ---
-    private fun fabSearchEnergyStateDialog(regionStr:String) {
+    private fun fabSearchEnergyStateDialog(regionStr:EnergyState) {
 
         this.let {
             MaterialDialog(it).show {
                 title(R.string.title_select_energy_state_cancel_selected)
-                message(text = regionStr)
+                message(text = regionStr.name)
                 positiveButton(R.string.title_select_energy_state_ok) { _ ->
                     KLog.e("Tagg","On positive")
-                    toMainActivity()
+                    toMainActivity(regionStr.id)
                 }
                 negativeButton(R.string.title_select_energy_state_cancel)
                 debugMode(debugMode)
@@ -328,7 +346,6 @@ class SelectEnergyStateActivity : AppCompatActivity() {
     private fun vibrator(){
         val vibratorService: Vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             vibratorService.vibrate(VibrationEffect.createOneShot(150, VibrationEffect.DEFAULT_AMPLITUDE))
         }
@@ -345,11 +362,12 @@ class SelectEnergyStateActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-    private fun toMainActivity(){
+    private fun toMainActivity(selectedId:Int){
+
+        preferences.setIdSelectedEnergyState(selectedId-1)
+
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-
-//        preferences.getCookies()
 
         finish()
     }
