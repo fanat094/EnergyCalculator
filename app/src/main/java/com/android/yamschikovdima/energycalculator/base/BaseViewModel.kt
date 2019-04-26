@@ -9,7 +9,6 @@ open class BaseViewModel : ViewModel(), LifecycleOwner {
 
     private val lifecycle: LifecycleRegistry = LifecycleRegistry(this)
 
-
     init {
         lifecycle.markState(Lifecycle.State.RESUMED)
     }

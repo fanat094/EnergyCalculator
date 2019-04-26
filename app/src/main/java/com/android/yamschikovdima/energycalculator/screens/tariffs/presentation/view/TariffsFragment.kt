@@ -65,11 +65,7 @@ class TariffsFragment : Fragment() {
             lifecycleOwner.let { this@TariffsFragment }
             vm = viewModel
 
-            //toolbarTariffs.setTitle(selelectedRegionId.toString())
-//            toolbarTariffs.title.let { selelectedRegionId.toString() }
-
             KLog.e("toolbar_tariffs", selelectedRegionId)
         }
     }
-
 }

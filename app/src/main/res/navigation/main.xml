@@ -6,7 +6,7 @@
             app:startDestination="@+id/calculate_section">
 
     <fragment android:id="@+id/calculate_section"
-              android:name="com.android.yamschikovdima.energycalculator.screens.calculate.CalculateFragment"
+              android:name="com.android.yamschikovdima.energycalculator.screens.calculate.presentation.view.CalculateFragment"
               android:label="calculate_fragment"
               tools:layout="@layout/calculate_fragment"/>
 

@@ -18,5 +18,14 @@
     <string name="title_select_energy_state_cancel_selected">Визначено</string>
     <string name="title_select_energy_state_cancel_selected_empty">Не визначено</string>
     <string name="title_select_energy_state_message_empty">Оберіть із запропоноваго списку</string>
+    <string name="title_item_menu_select_tariff">Оберіть тариф</string>
+    <string name="pre_energy_value">Попередній показник</string>
+    <string name="current_energy_value">Поточний показник</string>
+
+    <array name="tariffsDialogItems">
+        <item>Звичайний тариф</item>
+        <item>Двозонний тариф</item>
+        <item>Тризонний тариф</item>
+    </array>
 
 </resources>
