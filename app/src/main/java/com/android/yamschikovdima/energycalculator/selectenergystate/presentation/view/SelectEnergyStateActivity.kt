@@ -55,7 +55,7 @@ import io.reactivex.Single
 import kotlinx.android.synthetic.main.progress.*
 
 
-class SelectEnergyStateActivity : AppCompatActivity() {
+class SelectEnergyStateActivity : AppCompatActivity(), LifecycleOwner {
 
     @Inject
     lateinit var viewModel: SelectEnergyStateViewModel
@@ -84,9 +84,11 @@ class SelectEnergyStateActivity : AppCompatActivity() {
             com.android.yamschikovdima.energycalculator.R.layout.select_energy_state_activity)
 
         binding.apply {
+
             lifecycleOwner.let {
                 this@SelectEnergyStateActivity
             }
+
             vm = viewModel
 
             //events

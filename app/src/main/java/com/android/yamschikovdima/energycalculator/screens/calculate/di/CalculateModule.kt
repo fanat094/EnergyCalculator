@@ -2,11 +2,13 @@ package com.android.yamschikovdima.energycalculator.screens.calculate.di
 
 import android.content.Context
 import com.android.yamschikovdima.energycalculator.base.di.PerActivity
+import com.android.yamschikovdima.energycalculator.base.viewModelProvide
 import com.android.yamschikovdima.energycalculator.screens.calculate.data.repository.CalculateRepositoryImpl
 import com.android.yamschikovdima.energycalculator.screens.calculate.domain.CalculateInteractor
 import com.android.yamschikovdima.energycalculator.screens.calculate.domain.CalculateRepository
 import com.android.yamschikovdima.energycalculator.screens.calculate.presentation.view.CalculateFragment
 import com.android.yamschikovdima.energycalculator.screens.calculate.presentation.viewmodel.CalculateViewModel
+import com.android.yamschikovdima.energycalculator.screens.costs.presentation.viewmodel.CostsViewModel
 import com.android.yamschikovdima.energycalculator.screens.tariffs.data.repository.TariffsRepositoryImpl
 import com.android.yamschikovdima.energycalculator.screens.tariffs.domain.TariffsInteractor
 import com.android.yamschikovdima.energycalculator.screens.tariffs.domain.TariffsRepository
@@ -24,7 +26,11 @@ class CalculateModule(
     @PerActivity
     @Provides
     fun provideViewModel(calculateInteractor: CalculateInteractor): CalculateViewModel {
-        return CalculateViewModel(calculateInteractor)
+
+        return fragment.viewModelProvide {
+            CalculateViewModel(calculateInteractor)
+        }
+
     }
 
     @PerActivity

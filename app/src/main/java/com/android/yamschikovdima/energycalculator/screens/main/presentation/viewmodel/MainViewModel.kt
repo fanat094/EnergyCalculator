@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.android.yamschikovdima.energycalculator.R
 import com.android.yamschikovdima.energycalculator.base.BaseViewModel
 import com.android.yamschikovdima.energycalculator.screens.main.router.MainBottomTab
+import com.socks.library.KLog
 
 class MainViewModel : BaseViewModel() {
 
@@ -18,5 +19,9 @@ class MainViewModel : BaseViewModel() {
             else -> error("Unsupported menu item")
         }
         return true
+    }
+
+    init {
+        KLog.e("MainViewModel", "init")
     }
 }

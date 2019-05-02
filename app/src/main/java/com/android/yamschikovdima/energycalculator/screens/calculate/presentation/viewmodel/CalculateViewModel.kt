@@ -65,6 +65,9 @@ class CalculateViewModel(
     }
 
     init {
+
+        KLog.e("CalculateViewModel", "init")
+
         isVisible.set(true)
 //        KLog.e("setChoiceTariffInnnndex", "i_n"+innndex)
 

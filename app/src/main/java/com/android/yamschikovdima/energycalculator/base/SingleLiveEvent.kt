@@ -1,4 +1,4 @@
-package ru.misolutions.apteka.base
+package com.android.yamschikovdima.energycalculator.base
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData

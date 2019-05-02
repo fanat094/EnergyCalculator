@@ -2,6 +2,7 @@ package com.android.yamschikovdima.energycalculator.screens.tariffs.di
 
 import android.content.Context
 import com.android.yamschikovdima.energycalculator.base.di.PerActivity
+import com.android.yamschikovdima.energycalculator.base.di.PerFragment
 import com.android.yamschikovdima.energycalculator.screens.tariffs.data.repository.TariffsRepositoryImpl
 import com.android.yamschikovdima.energycalculator.screens.tariffs.domain.TariffsInteractor
 import com.android.yamschikovdima.energycalculator.screens.tariffs.domain.TariffsRepository
@@ -21,19 +22,19 @@ class TariffsModule(
     private val fragment: TariffsFragment
 ) {
 
-    @PerActivity
+    @PerFragment
     @Provides
     fun provideViewModel(tariffsInteractor: TariffsInteractor): TariffsViewModel {
         return TariffsViewModel(tariffsInteractor)
     }
 
-    @PerActivity
+    @PerFragment
     @Provides
     fun provideInteractor(repository: TariffsRepository): TariffsInteractor {
         return TariffsInteractor(repository)
     }
 
-    @PerActivity
+    @PerFragment
     @Provides
     fun provideRepository(context: Context): TariffsRepository {
         return TariffsRepositoryImpl(context)

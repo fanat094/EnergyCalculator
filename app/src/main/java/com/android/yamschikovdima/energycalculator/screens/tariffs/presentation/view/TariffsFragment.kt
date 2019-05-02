@@ -22,10 +22,11 @@ import kotlinx.android.synthetic.main.progress.*
 import kotlinx.android.synthetic.main.tariffs_fragment.*
 import javax.inject.Inject
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleOwner
+import com.android.yamschikovdima.energycalculator.screens.tariffs.di.TariffsComponent
 
 
-
-class TariffsFragment : Fragment() {
+class TariffsFragment : Fragment(), LifecycleOwner {
 
     @Inject
     lateinit var viewModel: TariffsViewModel
@@ -33,7 +34,7 @@ class TariffsFragment : Fragment() {
     @Inject
     lateinit var preferences: ISharedPreferenceManager
 
-    val component by lazy {
+    val component:TariffsComponent by lazy {
         DaggerTariffsComponent.builder()
             .appComponent(appComponent())
             .tariffsModule(TariffsModule(this))

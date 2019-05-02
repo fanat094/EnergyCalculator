@@ -11,7 +11,7 @@
               tools:layout="@layout/calculate_fragment"/>
 
     <fragment android:id="@+id/costs_section"
-              android:name="com.android.yamschikovdima.energycalculator.screens.costs.CostsFragment"
+              android:name="com.android.yamschikovdima.energycalculator.screens.costs.presentation.view.CostsFragment"
               android:label="costs_fragment"
               tools:layout="@layout/costs_fragment"/>
 

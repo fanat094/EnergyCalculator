@@ -2,9 +2,9 @@ package com.android.yamschikovdima.energycalculator.selectenergystate.presentati
 
 import androidx.lifecycle.MutableLiveData
 import com.android.yamschikovdima.energycalculator.base.BaseViewModel
+import com.android.yamschikovdima.energycalculator.base.SingleLiveEvent
 import com.android.yamschikovdima.energycalculator.selectenergystate.data.model.EnergyState
 import com.socks.library.KLog
-import ru.misolutions.apteka.base.SingleLiveEvent
 import java.text.SimpleDateFormat
 import java.util.*
 

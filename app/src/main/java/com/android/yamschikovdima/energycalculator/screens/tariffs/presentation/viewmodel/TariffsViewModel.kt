@@ -2,6 +2,7 @@ package com.android.yamschikovdima.energycalculator.screens.tariffs.presentation
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.android.yamschikovdima.energycalculator.base.BaseViewModel
 import com.android.yamschikovdima.energycalculator.base.data.ISharedPreferenceManager
 import com.android.yamschikovdima.energycalculator.screens.tariffs.domain.TariffsInteractor
@@ -67,6 +68,8 @@ class TariffsViewModel(
     }
 
     init {
+
+        KLog.e("TariffsViewModel", "init")
 
         isProgress.value=false
 
