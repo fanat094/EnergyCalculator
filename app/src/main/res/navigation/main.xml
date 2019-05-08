@@ -20,25 +20,25 @@
               android:label="tariffs_fragment"
               tools:layout="@layout/tariffs_fragment"/>
 
-    <action
-            android:id="@+id/to_calculate_section"
-            app:destination="@id/calculate_section"
-            app:launchSingleTop="true"
-            app:popUpTo="@+id/main"
-            app:popUpToInclusive="true"/>
+    <!--<action-->
+            <!--android:id="@+id/to_calculate_section"-->
+            <!--app:destination="@id/calculate_section"-->
+            <!--app:launchSingleTop="true"-->
+            <!--app:popUpTo="@+id/main"-->
+            <!--app:popUpToInclusive="true"/>-->
 
-    <action
-            android:id="@+id/to_costs_section"
-            app:destination="@id/costs_section"
-            app:launchSingleTop="true"
-            app:popUpTo="@+id/main"
-            app:popUpToInclusive="true"/>
+    <!--<action-->
+            <!--android:id="@+id/to_costs_section"-->
+            <!--app:destination="@id/costs_section"-->
+            <!--app:launchSingleTop="true"-->
+            <!--app:popUpTo="@+id/main"-->
+            <!--app:popUpToInclusive="true"/>-->
 
-    <action
-            android:id="@+id/to_tariffs_section"
-            app:destination="@id/tariffs_section"
-            app:launchSingleTop="true"
-            app:popUpTo="@+id/main"
-            app:popUpToInclusive="true"/>
+    <!--<action-->
+            <!--android:id="@+id/to_tariffs_section"-->
+            <!--app:destination="@id/tariffs_section"-->
+            <!--app:launchSingleTop="true"-->
+            <!--app:popUpTo="@+id/main"-->
+            <!--app:popUpToInclusive="true"/>-->
 
 </navigation>

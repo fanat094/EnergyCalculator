@@ -1,7 +1,6 @@
 package com.android.yamschikovdima.energycalculator.selectenergystate.presentation.view
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -13,27 +12,17 @@ import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
-import android.provider.ContactsContract
 import android.provider.Settings
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.app.ActivityCompat.requestPermissions
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import androidx.navigation.NavController
 import com.afollestad.materialdialogs.MaterialDialog
-import com.afollestad.materialdialogs.list.listItemsSingleChoice
 import com.android.yamschikovdima.energycalculator.R
 import com.android.yamschikovdima.energycalculator.base.binding.setVisibility
 import com.android.yamschikovdima.energycalculator.base.data.ISharedPreferenceManager
-import com.android.yamschikovdima.energycalculator.base.data.SharedPreferencesManager
 import com.android.yamschikovdima.energycalculator.base.di.appComponent
 import com.android.yamschikovdima.energycalculator.databinding.SelectEnergyStateActivityBinding
 import com.android.yamschikovdima.energycalculator.screens.main.presentation.view.MainActivity
@@ -42,20 +31,14 @@ import com.android.yamschikovdima.energycalculator.selectenergystate.di.DaggerSe
 import com.android.yamschikovdima.energycalculator.selectenergystate.di.SelectEnergyStateModule
 import com.android.yamschikovdima.energycalculator.selectenergystate.presentation.router.SelectEnergyStateRouter
 import com.android.yamschikovdima.energycalculator.selectenergystate.presentation.viewmodel.SelectEnergyStateViewModel
-import com.android.yamschikovdima.energycalculator.utils.PermissionHelper
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
-import com.google.gson.Gson
 import com.socks.library.KLog
-import javax.inject.Inject
-import com.google.gson.GsonBuilder
-import com.socks.library.klog.JsonLog
-import com.google.gson.reflect.TypeToken
-import io.reactivex.Single
 import kotlinx.android.synthetic.main.progress.*
+import javax.inject.Inject
 
 
-class SelectEnergyStateActivity : AppCompatActivity(), LifecycleOwner {
+class SelectEnergyStateActivity : AppCompatActivity() {
 
     @Inject
     lateinit var viewModel: SelectEnergyStateViewModel
@@ -92,6 +75,7 @@ class SelectEnergyStateActivity : AppCompatActivity(), LifecycleOwner {
             vm = viewModel
 
             //events
+
             viewModel.fabSearchEnergyState.observe(lifecycleOwner.let {
                 this@SelectEnergyStateActivity
             }, Observer {

@@ -2,20 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-            android:id="@+id/calculate_section"
+            android:id="@+id/calculate"
             android:enabled="true"
             android:title="@string/calculate_section"
             android:icon="@drawable/ic_lightbulb_outline"
             app:showAsAction="ifRoom"/>
     <item
-            android:id="@+id/costs_section"
+            android:id="@+id/costs"
             android:enabled="true"
             android:title="@string/costs_section"
             android:icon="@drawable/ic_cash"
             app:showAsAction="ifRoom"/>
 
     <item
-            android:id="@+id/tariffs_section"
+            android:id="@+id/tariffs"
             android:enabled="true"
             android:title="@string/tariffs_section"
             android:icon="@drawable/ic_power_plug"

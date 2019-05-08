@@ -1,14 +1,11 @@
 package com.android.yamschikovdima.energycalculator.screens.calculate.presentation.viewmodel
 
-import androidx.databinding.Observable
 import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import com.android.yamschikovdima.energycalculator.base.BaseViewModel
 import com.android.yamschikovdima.energycalculator.screens.calculate.domain.CalculateInteractor
-import com.android.yamschikovdima.energycalculator.screens.tariffs.domain.TariffsInteractor
 import com.socks.library.KLog
-import androidx.databinding.ObservableField
-import com.socks.library.KLog.init
 
 
 class CalculateViewModel(
@@ -24,7 +21,12 @@ class CalculateViewModel(
 
     val normalTariffPreEnergyValue = MutableLiveData<String>()
     val normalTariffCurrentEnergyValue = MutableLiveData<String>()
-    val normalTariffUsedEnergyValue = ObservableField<String>()
+
+    //res
+    val tariffsResultUsedValue = ObservableField<String>()
+    val tariffsResultPreLimitValue = ObservableField<String>()
+    val tariffsResultAfterLimitValue = ObservableField<String>()
+    val tariffsResultSumValue = ObservableField<String>()
 
     var innndex = ""
 
@@ -55,13 +57,35 @@ class CalculateViewModel(
 
         isVisibleResult.set(true)
 
-        val val1 = normalTariffPreEnergyValue.value?.toInt()
-        val val2 = normalTariffCurrentEnergyValue.value?.toInt()
-        val res = val2?.minus(val1!!).toString()
+//        val val1 = normalTariffPreEnergyValue.value?.toInt()
+//        val val2 = normalTariffCurrentEnergyValue.value?.toInt()
+//        val res = val2?.minus(val1!!).toString()
+//
+//        normalTariffUsedEnergyValue.set(res)
 
-        normalTariffUsedEnergyValue.set(res)
+        KLog.e("normalTariffEvent", tariffsResultUsedValue)
+        calculation()
+    }
 
-        KLog.e("normalTariffEvent", normalTariffUsedEnergyValue)
+    fun calculation(){
+
+        val normalTariffPreEnergyValue = normalTariffPreEnergyValue.value?.toInt()
+        val normalTariffCurrentEnergyValue = normalTariffCurrentEnergyValue.value?.toInt()
+        val differenceValue = normalTariffCurrentEnergyValue?.minus(normalTariffPreEnergyValue!!)
+
+        val afterHundred = differenceValue?.minus(100)
+
+        val afterHundredValue = afterHundred?.times(1.68)
+
+        val preHundredValue = 100*0.9
+
+        val tariffsSumVaue = afterHundredValue?.plus(preHundredValue)
+
+        tariffsResultUsedValue.set(differenceValue.toString())
+        tariffsResultPreLimitValue.set(preHundredValue.toString())
+        tariffsResultAfterLimitValue.set(afterHundredValue.toString())
+        tariffsResultSumValue.set(tariffsSumVaue.toString())
+
     }
 
     init {

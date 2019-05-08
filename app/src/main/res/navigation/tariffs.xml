@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/tariffs"
+            app:startDestination="@+id/tariffs_section">
+
+    <fragment android:id="@+id/tariffs_section"
+              android:name="com.android.yamschikovdima.energycalculator.screens.tariffs.presentation.view.TariffsFragment"
+              android:label="tariffs_fragment"
+              tools:layout="@layout/tariffs_fragment"/>
+</navigation>

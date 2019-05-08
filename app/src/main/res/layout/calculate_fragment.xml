@@ -508,7 +508,7 @@
                                     android:layout_marginStart="8dp"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     android:layout_marginEnd="8dp"
-                                    android:id="@+id/threeZoneTariffCvR"
+                                    android:id="@+id/tariffsResultCv"
                                     android:layout_marginTop="8dp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     android:layout_marginBottom="8dp">
@@ -521,7 +521,7 @@
                                             android:text="Розрахунок"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/threeZoneTariffTvR"
+                                            android:id="@+id/tariffsResultTv"
                                             android:layout_marginTop="16dp"
                                             app:layout_constraintTop_toTopOf="parent"
                                             app:layout_constraintStart_toStartOf="parent"
@@ -532,7 +532,7 @@
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             app:srcCompat="@drawable/ic_help_outline_black_24dp"
-                                            android:id="@+id/threeZoneTariffIvR"
+                                            android:id="@+id/tariffsResultIv"
                                             app:layout_constraintEnd_toEndOf="parent"
                                             android:layout_marginEnd="8dp"
                                             android:layout_marginTop="8dp"
@@ -542,10 +542,10 @@
                                             android:background="@color/colorDivider"
                                             android:layout_width="0dp"
                                             android:layout_height="1dp"
-                                            android:id="@+id/threeZoneTariffDividerVvR"
+                                            android:id="@+id/tariffsResultDividerVv"
                                             app:layout_constraintEnd_toEndOf="parent"
                                             android:layout_marginTop="12dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffTvR"
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultTv"
                                             app:layout_constraintStart_toStartOf="parent"
                                             android:layout_marginStart="16dp"
                                             android:layout_marginEnd="8dp"/>
@@ -555,8 +555,8 @@
                                             android:text="Вжито"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/threeZoneTariffDayTvR"
-                                            app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDividerVvR"
+                                            android:id="@+id/tariffsResultUsedTv"
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultDividerVv"
                                             app:layout_constraintStart_toStartOf="parent"
                                             android:layout_marginStart="16dp"
                                             android:layout_marginTop="24dp"/>
@@ -565,72 +565,101 @@
                                             tools:text="3331"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/threeZoneTariffDayValueTvR"
+                                            android:id="@+id/tariffsResultUsedValueTv"
                                             android:textSize="18sp"
-                                            android:text="@{vm.normalTariffUsedEnergyValue}"
+                                            android:text="@{vm.tariffsResultUsedValue}"
                                             android:layout_marginTop="24dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDividerVvR"
-                                            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultDividerVv"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            android:layout_marginEnd="16dp"/>
                                     <TextView
                                             android:text="Ліміт"
                                             android:textSize="18sp"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/threeZoneTariffNightTvR"
+                                            android:id="@+id/tariffsResultLimitTv"
                                             app:layout_constraintStart_toStartOf="parent"
                                             android:layout_marginStart="16dp"
                                             android:layout_marginTop="16dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDayTvR"/>
-
-                                    <TextView
-                                            android:text="Платіж по ліміту"
-                                            android:textSize="18sp"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/threeZoneTariffPeakTvR"
-                                            app:layout_constraintStart_toStartOf="parent"
-                                            android:layout_marginStart="16dp"
-                                            android:layout_marginTop="16dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffNightTvR"/>
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultUsedTv"/>
 
                                     <TextView
                                             android:textSize="18sp"
                                             android:text="100 кВ"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/threeZoneTariffNightMaxTvR"
+                                            android:id="@+id/tariffsResultLimitValueTv"
                                             app:layout_constraintEnd_toEndOf="parent"
                                             android:layout_marginEnd="16dp"
                                             android:layout_marginTop="16dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffDayValueTvR"/>
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultUsedValueTv"/>
+
                                     <TextView
+                                            android:text="Платіж по ліміту"
                                             android:textSize="18sp"
-                                            android:text="100"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/threeZoneTariffPeakMaxTvR"
+                                            android:id="@+id/tariffsResultPreLimitTv"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultLimitTv"/>
+
+                                    <TextView
+                                            android:textSize="18sp"
+                                            tools:text="100"
+                                            android:text="@{vm.tariffsResultPreLimitValue}"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/tariffsResultPreLimitValueTv"
                                             android:layout_marginEnd="16dp"
                                             app:layout_constraintEnd_toEndOf="parent"
                                             android:layout_marginTop="16dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffNightMaxTvR"/>
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultLimitValueTv"/>
                                     <TextView
                                             android:text="Платіж більше ліміта"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/textView"
+                                            android:id="@+id/tariffsResultAfterLimitTv"
                                             android:textSize="18sp"
-                                            app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffPeakTvR"
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultPreLimitTv"
                                             android:layout_marginTop="16dp"
                                             app:layout_constraintStart_toStartOf="parent"
                                             android:layout_marginStart="16dp"/>
                                     <TextView
-                                            android:text="1000"
+                                            android:text="@{vm.tariffsResultAfterLimitValue}"
+                                            tools:text="1000"
                                             android:textSize="18sp"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/textView4" app:layout_constraintEnd_toEndOf="parent"
-                                            android:layout_marginEnd="16dp" android:layout_marginTop="16dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/threeZoneTariffPeakMaxTvR"/>
+                                            android:id="@+id/tariffsResultAfterLimitValueTv"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            android:layout_marginEnd="16dp"
+                                            android:layout_marginTop="16dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultPreLimitValueTv"/>
+                                    <TextView
+                                            android:text="Всього"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/tariffsResultSumTv"
+                                            android:layout_marginTop="16dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultAfterLimitTv"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginStart="16dp"/>
+                                    <TextView
+                                            android:text="@{vm.tariffsResultSumValue}"
+                                            tools:text="1111"
+                                            android:textStyle="bold"
+                                            android:textSize="18sp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/tariffsResultSumValueTv"
+                                            android:layout_marginTop="16dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/tariffsResultAfterLimitValueTv"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            android:layout_marginEnd="16dp"/>
 
                                 </androidx.constraintlayout.widget.ConstraintLayout>
                             </androidx.cardview.widget.CardView>

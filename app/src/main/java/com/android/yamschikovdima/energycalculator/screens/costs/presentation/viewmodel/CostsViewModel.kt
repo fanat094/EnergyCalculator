@@ -1,15 +1,14 @@
 package com.android.yamschikovdima.energycalculator.screens.costs.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.android.yamschikovdima.energycalculator.base.BaseViewModel
+import androidx.lifecycle.ViewModel
 import com.socks.library.KLog
 
-class CostsViewModel:BaseViewModel(){
+class CostsViewModel():ViewModel(){
 
     val costsData = MutableLiveData<String>()
 
     init {
-        KLog.e("CostsViewModel","init")
+        KLog.e("CostsViewModel","init"+costsData)
     }
-
 }
