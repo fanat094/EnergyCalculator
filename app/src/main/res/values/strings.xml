@@ -22,6 +22,9 @@
     <string name="pre_energy_value">Попередній показник</string>
     <string name="current_energy_value">Поточний показник</string>
 
+    <string name="title_pre_current_value">Зверніть увагу</string>
+    <string name="message_pre_current_value">Поточний показник не може бути меншим ніж Попередній</string>
+
     <array name="tariffsDialogItems">
         <item>Звичайний тариф</item>
         <item>Двозонний тариф</item>
