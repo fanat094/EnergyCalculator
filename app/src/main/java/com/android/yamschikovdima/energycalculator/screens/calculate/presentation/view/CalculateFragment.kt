@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
 import com.android.yamschikovdima.energycalculator.R
+import com.android.yamschikovdima.energycalculator.base.data.ISharedPreferenceManager
 import com.android.yamschikovdima.energycalculator.base.di.appComponent
 import com.android.yamschikovdima.energycalculator.databinding.CalculateFragmentBinding
 import com.android.yamschikovdima.energycalculator.screens.calculate.di.CalculateComponent
@@ -29,8 +30,8 @@ class CalculateFragment : Fragment() {
     @Inject
     lateinit var viewModel: CalculateViewModel
 
-//    @Inject
-//    lateinit var preferences: ISharedPreferenceManager
+    @Inject
+    lateinit var preferences: ISharedPreferenceManager
 
     private var debugMode = false
 
@@ -41,19 +42,19 @@ class CalculateFragment : Fragment() {
             .build()
     }
 
-//    private val selelectedRegionId by lazy {
-//
-//        preferences.getIdSelectedEnergyState()
-//    }
+
+    private val selelectedRegionId by lazy {
+        preferences.getIdSelectedEnergyState()
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         component.inject(this)
+        viewModel.setSelelectedRegionId(selelectedRegionId)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        Log.e("CalculateFragment", "CalculateFragment")
+        Log.e("CalculateFragmentInit", "CalculateFragment")
 
         return DataBindingUtil.inflate<com.android.yamschikovdima.energycalculator.databinding.CalculateFragmentBinding>(
             inflater,
@@ -74,18 +75,17 @@ class CalculateFragment : Fragment() {
 
             toolbar_calculate.setOnMenuItemClickListener {
                 KLog.e("menuItemClickListener", "trueClick")
-                tariffDialog()
+                showTariffDialog()
                 true
             }
 
-            normalTariffDayValueTv.addTextChangedListener(viewModel.mLoginFormValidator.passwordTextWatcher)
-            normalTariffNightValueTv.addTextChangedListener(viewModel.mLoginFormValidator2.passwordTextWatcher)
+            normalTariffDayValueTv.addTextChangedListener(viewModel.mNormalTariffDayValueFormValidator.fieldTextWatcher)
+            normalTariffNightValueTv.addTextChangedListener(viewModel.mNormalTariffNightValueFormValidator.fieldTextWatcher)
 
         }
 
-        viewModel.mLoginFormValidator.getPasswordError.observe(this, Observer { error ->
+        viewModel.mNormalTariffDayValueFormValidator.getFieldError.observe(this, Observer { error ->
             if (!error) {
-                //KLog.e("!err", "init")
                 view.normalTariffDayValueTv.error = "Не менше 5-ти"
 
                 view.normalTariffBtn.isEnabled = false
@@ -99,7 +99,7 @@ class CalculateFragment : Fragment() {
             }
         })
 
-        viewModel.mLoginFormValidator2.getPasswordError.observe(this, Observer { error ->
+        viewModel.mNormalTariffNightValueFormValidator.getFieldError.observe(this, Observer { error ->
             if (!error) {
                 view.normalTariffNightValueTv.error = "Не менше 5-ти"
                 view.normalTariffBtn.isEnabled = false
@@ -116,50 +116,27 @@ class CalculateFragment : Fragment() {
         //
         viewModel.checkTariffCurrentEnergyValue.observe(this, Observer {
 
-            if (!it){
+            if (!it) {
 
                 KLog.e("goDialog", "init")
-                correctPreCurrentValueDialog()
+                showCorrectPreCurrentValueDialog()
             }
         })
     }
-
 
     //checkValid
-    private fun checkValidTwoEdit(): Boolean {
-
-        var hh = false
-
-        viewModel.mLoginFormValidator2.getPasswordError.observe(this, Observer { error ->
-            if (!error) {
-                normalTariffNightValueTv.error = "Не менше 5-ти"
-                //normalTariffBtn.isEnabled = false
-                hh = false
-                KLog.e("checkValid", hh)
-            } else {
-
-                normalTariffNightValueTv.error = null
-                //normalTariffBtn.isEnabled = true
-                hh = true
-                KLog.e("checkValid", normalTariffNightValueTv.text)
-            }
-        })
-
-        return hh
-    }
-
     private fun checkValidFirstEdit(): Boolean {
 
-        var hh = false
+        var checkValid = false
 
-        viewModel.mLoginFormValidator.getPasswordError.observe(this, Observer { error ->
+        viewModel.mNormalTariffDayValueFormValidator.getFieldError.observe(this, Observer { error ->
             if (!error) {
-                normalTariffDayValueTv.error = "Не менше 5-ти"
-                hh = false
+                normalTariffDayValueTv.error = getString(R.string.validation_message)
+                checkValid = false
             } else {
                 KLog.e("err", "init")
                 normalTariffDayValueTv.error = null
-                hh = true
+                checkValid = true
 
                 if (checkValidTwoEdit()) {
                     normalTariffBtn.isEnabled = true
@@ -167,11 +144,33 @@ class CalculateFragment : Fragment() {
             }
         })
 
-        return hh
+        return checkValid
+    }
+
+    private fun checkValidTwoEdit(): Boolean {
+
+        var checkValid = false
+
+        viewModel.mNormalTariffNightValueFormValidator.getFieldError.observe(this, Observer { error ->
+            if (!error) {
+                normalTariffNightValueTv.error = getString(R.string.validation_message)
+                //normalTariffBtn.isEnabled = false
+                checkValid = false
+                KLog.e("checkValid", checkValid)
+            } else {
+
+                normalTariffNightValueTv.error = null
+                //normalTariffBtn.isEnabled = true
+                checkValid = true
+                KLog.e("checkValid", normalTariffNightValueTv.text)
+            }
+        })
+
+        return checkValid
     }
 
     //tariffDialog
-    fun tariffDialog() {
+    private fun showTariffDialog() {
 
         context?.let {
             MaterialDialog(it).show {
@@ -188,7 +187,9 @@ class CalculateFragment : Fragment() {
         }
     }
 
-    fun correctPreCurrentValueDialog(){
+    private fun showCorrectPreCurrentValueDialog() {
+
+        KLog.e("correctPreCurrent", "init")
 
         context?.let {
             MaterialDialog(it).show {

@@ -113,6 +113,25 @@
                                             app:layout_constraintHorizontal_bias="0.0"
                                             android:layout_marginEnd="8dp"/>
 
+                                    <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:srcCompat="@drawable/ic_wb_sunny_black_24dp"
+                                            android:id="@+id/imageView2"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="24dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/normalTariffDividerVv"/>
+
+                                    <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:srcCompat="@drawable/ic_wb_sunny_black_24dp"
+                                            android:id="@+id/imageView3" android:layout_marginTop="16dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginStart="16dp"/>
+
                                     <TextView
                                             android:textSize="18sp"
                                             android:text="День/Ніч"
@@ -184,22 +203,6 @@
                                             app:layout_constraintBottom_toBottomOf="parent"
                                             android:layout_marginBottom="8dp"
                                             android:enabled="false"/>
-                                    <ImageView
-
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            app:srcCompat="@drawable/ic_wb_sunny_black_24dp"
-                                            android:id="@+id/imageView2" app:layout_constraintStart_toStartOf="parent"
-                                            android:layout_marginStart="16dp" android:layout_marginTop="24dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/normalTariffDividerVv"/>
-                                    <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            app:srcCompat="@drawable/ic_wb_sunny_black_24dp"
-                                            android:id="@+id/imageView3" android:layout_marginTop="16dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                                            app:layout_constraintStart_toStartOf="parent"
-                                            android:layout_marginStart="16dp"/>
 
                                 </androidx.constraintlayout.widget.ConstraintLayout>
                             </androidx.cardview.widget.CardView>
@@ -211,12 +214,11 @@
                                 android:layout_height="match_parent"
                                 android:id="@+id/constraintLayoutTwoZoneTariff"
                                 app:visibility="@{vm.isVisibleTwo}"
-                                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutNormalTariff"
-                        >
+                                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutNormalTariff">
 
                             <androidx.cardview.widget.CardView
                                     android:layout_width="match_parent"
-                                    android:layout_height="200dp"
+                                    android:layout_height="300dp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     android:layout_marginStart="8dp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -263,72 +265,169 @@
                                             app:layout_constraintHorizontal_bias="0.0"
                                             android:layout_marginEnd="8dp"/>
 
+                                    <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:srcCompat="@drawable/ic_wb_sunny_black_24dp"
+                                            android:id="@+id/imageView22"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="24dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDividerVv"/>
+
+                                    <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:srcCompat="@drawable/ic_wb_sunny_black_24dp"
+                                            android:id="@+id/imageView32"
+                                            android:layout_marginTop="16dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/imageView22"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginStart="16dp"/>
+
                                     <TextView
                                             android:textSize="18sp"
                                             android:text="День"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/twoZoneTariffDayTv"
+                                            android:id="@+id/twoZoneTariffDayPreTv"
                                             app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDividerVv"
-                                            app:layout_constraintStart_toStartOf="parent"
-                                            android:layout_marginStart="16dp"
-                                            android:layout_marginTop="24dp"/>
+                                            android:layout_marginTop="24dp"
+                                            app:layout_constraintStart_toEndOf="@+id/imageView22"
+                                            android:layout_marginStart="8dp"/>
 
-                                    <TextView
-                                            tools:text="2221"
-                                            android:layout_width="wrap_content"
+                                    <EditText
+                                            android:text="@={vm.twoZoneTariffDayPreEnergyValue}"
+                                            android:inputType="number"
+                                            android:hint="@string/pre_energy_value"
+                                            android:layout_width="0dp"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/twoZoneTariffDayValueTv"
-                                            android:textSize="18sp"
-                                            android:text="{vm.twoZoneTariffDayValue}"
+                                            android:id="@+id/twoZoneTariffDayPreValueTv"
                                             android:layout_marginTop="24dp"
                                             app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDividerVv"
-                                            app:layout_constraintEnd_toStartOf="@+id/twoZoneTariffDayMaxValueTv"
-                                            android:layout_marginEnd="8dp"/>
+                                            app:layout_constraintStart_toEndOf="@+id/twoZoneTariffDayPreTv"
+                                            android:layout_marginStart="8dp"
+                                            app:layout_constraintBaseline_toBaselineOf="@+id/twoZoneTariffDayPreTv"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            android:layout_marginEnd="16dp"/>
+
                                     <TextView
                                             android:text="Ніч"
                                             android:textSize="18sp"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/twoZoneTariffNightTv"
-                                            app:layout_constraintStart_toStartOf="parent"
-                                            android:layout_marginStart="16dp"
+                                            android:id="@+id/twoZoneTariffNightPreTv"
                                             android:layout_marginTop="16dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDayValueTv"/>
-                                    <TextView
-                                            tools:text="2222"
-                                            android:text="{vm.twoZoneTariffNightValue}"
+                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDayPreTv"
+                                            app:layout_constraintStart_toEndOf="@+id/imageView32"
+                                            android:layout_marginStart="8dp"/>
+
+                                    <EditText
+                                            android:text="@={vm.twoZoneTariffNightPreEnergyValue}"
+                                            app:layout_constraintBaseline_toBaselineOf="@+id/twoZoneTariffNightPreTv"
+                                            android:inputType="number"
+                                            android:hint="@string/pre_energy_value"
                                             android:textSize="18sp"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/twoZoneTariffNightPreValueTv"
+                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffNightPreTv"
+                                            app:layout_constraintStart_toEndOf="@+id/twoZoneTariffNightPreTv"
+                                            android:layout_marginStart="24dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            android:layout_marginEnd="16dp"/>
+
+                                    <ImageView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/twoZoneTariffNightValueTv"
+                                            app:srcCompat="@drawable/ic_wb_sunny_black_24dp"
+                                            android:id="@+id/imageView34"
                                             android:layout_marginTop="16dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDayValueTv"
-                                            app:layout_constraintEnd_toStartOf="@+id/twoZoneTariffNightMaxValueTv"
-                                            android:layout_marginEnd="8dp"/>
+                                            app:layout_constraintTop_toBottomOf="@+id/imageView32"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginStart="16dp"/>
 
                                     <TextView
-                                            tools:text="0,45"
-                                            android:text="{vm.twoZoneTariffDayMaxValue}"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:id="@+id/twoZoneTariffDayMaxValueTv"
-                                            android:textSize="18sp"
-                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDividerVv"
-                                            app:layout_constraintEnd_toEndOf="parent"
-                                            android:layout_marginEnd="16dp"
-                                            android:layout_marginTop="24dp"
-                                    />
-                                    <TextView
-                                            android:text="{vm.twoZoneTariffNightMaxValue}"
+                                            android:text="День"
                                             android:textSize="18sp"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:id="@+id/twoZoneTariffNightMaxValueTv"
-                                            app:layout_constraintEnd_toEndOf="parent"
-                                            android:layout_marginEnd="16dp"
+                                            android:id="@+id/twoZoneTariffDayCurrentTv"
                                             android:layout_marginTop="16dp"
-                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDayValueTv"/>
+                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffNightPreTv"
+                                            app:layout_constraintStart_toEndOf="@+id/imageView34"
+                                            android:layout_marginStart="8dp"/>
+
+                                    <EditText
+                                            android:text="@={vm.twoZoneTariffDayCurrentEnergyValue}"
+                                            app:layout_constraintBaseline_toBaselineOf="@+id/twoZoneTariffDayCurrentTv"
+                                            android:inputType="number"
+                                            android:hint="@string/current_energy_value"
+                                            android:textSize="18sp"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/twoZoneTariffDayCurrentValueTv"
+                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDayCurrentTv"
+                                            app:layout_constraintStart_toEndOf="@+id/twoZoneTariffDayCurrentTv"
+                                            android:layout_marginStart="8dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            android:layout_marginEnd="16dp"/>
+
+                                    <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:srcCompat="@drawable/ic_wb_sunny_black_24dp"
+                                            android:id="@+id/imageView35"
+                                            android:layout_marginTop="16dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/imageView34"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginStart="16dp"/>
+
+                                    <TextView
+                                            android:text="Ніч"
+                                            android:textSize="18sp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/twoZoneTariffNightCurrentTv"
+                                            android:layout_marginTop="16dp"
+                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffDayCurrentTv"
+                                            app:layout_constraintStart_toEndOf="@+id/imageView35"
+                                            android:layout_marginStart="8dp"/>
+
+                                    <EditText
+                                            android:text="@={vm.twoZoneTariffNightCurrentEnergyValue}"
+                                            app:layout_constraintBaseline_toBaselineOf="@+id/twoZoneTariffNightCurrentTv"
+                                            android:inputType="number"
+                                            android:hint="@string/current_energy_value"
+                                            android:textSize="18sp"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/twoZoneTariffNightCurrentValueTv"
+                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffNightCurrentTv"
+                                            app:layout_constraintStart_toEndOf="@+id/twoZoneTariffNightCurrentTv"
+                                            android:layout_marginStart="24dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            android:layout_marginEnd="16dp"/>
+
+                                    <com.google.android.material.button.MaterialButton
+                                            android:onClick="@{()->vm.twoZoneTariffEvent()}"
+                                            style="@style/Widget.MaterialComponents.Button.Icon"
+                                            android:textColor="@color/colorWhite"
+                                            android:backgroundTint="@color/colorPrimary"
+                                            app:icon="@drawable/ic_cash"
+                                            android:text="Розрахувати"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/twoZoneTariffBtn"
+                                            app:layout_constraintTop_toBottomOf="@+id/twoZoneTariffNightCurrentTv"
+                                            android:layout_marginTop="8dp"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginStart="16dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            android:layout_marginEnd="16dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            android:layout_marginBottom="8dp"
+                                            android:enabled="true"/>
 
                                 </androidx.constraintlayout.widget.ConstraintLayout>
                             </androidx.cardview.widget.CardView>

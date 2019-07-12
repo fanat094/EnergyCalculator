@@ -4,5 +4,5 @@ import com.android.yamschikovdima.energycalculator.selectenergystate.data.model.
 
 interface CalculateRepository {
 
-//    fun getSelectEnergyState(): List<EnergyState>
+    fun getSelectedEnergyState(fusedRegion: Int): EnergyState
 }

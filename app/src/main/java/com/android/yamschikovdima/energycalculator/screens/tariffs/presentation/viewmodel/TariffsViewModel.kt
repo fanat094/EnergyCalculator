@@ -2,13 +2,10 @@ package com.android.yamschikovdima.energycalculator.screens.tariffs.presentation
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.android.yamschikovdima.energycalculator.base.BaseViewModel
-import com.android.yamschikovdima.energycalculator.base.data.ISharedPreferenceManager
 import com.android.yamschikovdima.energycalculator.screens.tariffs.domain.TariffsInteractor
 import com.android.yamschikovdima.energycalculator.selectenergystate.data.model.EnergyState
 import com.socks.library.KLog
-import javax.inject.Inject
 
 class TariffsViewModel(
 
@@ -37,13 +34,13 @@ class TariffsViewModel(
 
     val toolbarTariffsTitle = MutableLiveData<String>()
 
-    lateinit var objEnerg:EnergyState
+    lateinit var objEnerg: EnergyState
 
-    val isProgress = MutableLiveData<Boolean>().apply { value=true }
+    val isProgress = MutableLiveData<Boolean>().apply { value = true }
 
     fun setSelelectedRegionId(selelectedRegionId: Int) {
         selelectedRegionIdValue.value = selelectedRegionId
-        Log.e("setSelelectedRegionId", ""+ selelectedRegionIdValue.value)
+        Log.e("setSelelectedRegionId", "" + selelectedRegionIdValue.value)
 
         objEnerg = tariffsInteractor.getSelectEnergyState()[selelectedRegionId]
 
@@ -71,7 +68,7 @@ class TariffsViewModel(
 
         KLog.e("TariffsViewModel", "init")
 
-        isProgress.value=false
+        isProgress.value = false
 
 
         //normalTariffDayValue.value = tariffsInteractor.getSelectEnergyState()[21].calculator[0].era_mini + GRN

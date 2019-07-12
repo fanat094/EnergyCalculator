@@ -67,10 +67,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.0.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
 
-    //utils
-    implementation 'com.github.zhaokaiqiang.klog:library:1.6.0'
-
-
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.afollestad.material-dialogs:core:2.6.0'
     //implementation 'com.afollestad.material-dialogs:lifecycle:2.6.0'
@@ -89,5 +85,8 @@ dependencies {
     //coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
+
+    //utils
+    implementation 'com.github.zhaokaiqiang.klog:library:1.6.0'
 
 }
